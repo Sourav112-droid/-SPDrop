@@ -1,0 +1,88 @@
+name: p2p_sync_app
+description: "SpDrop — Premium P2P file transfer."
+publish_to: 'none'
+
+version: 2.0.0-beta+1
+
+environment:
+  sdk: ^3.12.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  network_info_plus: ^7.0.0
+  device_info_plus: ^12.4.0
+  receive_sharing_intent: ^1.6.5
+  path_provider: ^2.1.6
+  permission_handler: ^12.0.3
+  file_picker: ^8.1.2
+  path: ^1.9.0
+  nsd: ^2.0.0
+  shelf: ^1.4.1
+  shelf_web_socket: ^1.0.4
+  web_socket_channel: ^2.4.0
+  shared_preferences: ^2.2.3
+  flutter_foreground_task: ^6.1.1
+  wakelock_plus: ^1.5.2
+  desktop_drop: ^0.4.4
+  cryptography: ^2.7.0
+  open_filex: ^4.6.0
+  google_fonts: ^6.2.1
+  flutter_animate: ^4.5.2
+  system_tray: ^2.0.3
+  window_manager: ^0.3.9
+  workmanager: ^0.9.0+3
+  flutter_local_notifications: ^18.0.1
+  uuid: ^3.0.7
+  connectivity_plus: ^6.1.1
+  lottie: ^3.3.1
+  dynamic_color: ^1.7.0
+  windows_single_instance: ^1.1.0
+  flutter_background_service: ^5.1.0
+  flutter_background_service_android: ^6.3.1
+  android_intent_plus: ^6.0.0
+  super_clipboard: ^0.3.0+2
+  clipboard_watcher: ^0.3.0
+  flutter_secure_storage: ^10.3.1
+  flutter_rust_bridge: ^2.12.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  msix: ^3.17.0
+  flutter_launcher_icons: ^0.13.1
+
+flutter_launcher_icons:
+  android: true
+  ios: false
+  windows:
+    generate: true
+    icon_path: "assets/icon.png"
+  image_path: "assets/icon.png"
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/icon.ico
+    - assets/icon.png
+
+msix_config:
+  display_name: SpDrop
+  publisher_display_name: Sourav
+  identity_name: com.example.p2psyncapp
+  msix_version: 1.0.24.0
+  logo_path: windows\runner\resources\app_icon.ico
+  capabilities: "internetClient, internetClientServer, privateNetworkClientServer"
+  declarations: |
+    <Extension Category="windows.shareTarget">
+      <ShareTarget>
+        <SupportedFileTypes>
+          <SupportsAnyFileType />
+        </SupportedFileTypes>
+        <DataFormat>Text</DataFormat>
+        <DataFormat>URI</DataFormat>
+        <DataFormat>Bitmap</DataFormat>
+      </ShareTarget>
+    </Extension>
